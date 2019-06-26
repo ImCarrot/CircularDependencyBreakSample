@@ -4,12 +4,21 @@ class TokenFetcherImpl implements TokenFetcher {
 
     private final FireAPI apiFirer;
 
+    private String CI;
+    private String CS;
+
     TokenFetcherImpl(FireAPI apiFirer) {
         this.apiFirer = apiFirer;
     }
 
     @Override
-    public String fetchToken(String CI, String CS) {
+    public void init(String CI, String CS) {
+        this.CI = CI;
+        this.CS = CS;
+    }
+
+    @Override
+    public String fetchToken() {
 
         if (CI == null || CS ==null)
             throw new IllegalArgumentException("Missing CI/CS");
