@@ -16,9 +16,8 @@ public class App {
         FireAPI apiCallerFunction = (data) -> caller.callAPI(false, data);
 
         TokenFetcher tokenFetcher = OAuthInit.getOAuth("iam", "carrot", apiCallerFunction);
-//        System.out.println(tokenFetcher.fetchToken());
 
-        //noinspection Convert2MethodRef
+        //noinspection Convert2MethodRef to keep things simple than using fancy syntax
         OAuthProvider provider = ()-> tokenFetcher.fetchToken();
 
         // re-init the caller this time with OAuth
