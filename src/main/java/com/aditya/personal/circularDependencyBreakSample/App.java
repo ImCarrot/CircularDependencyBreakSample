@@ -11,8 +11,8 @@ public class App {
 
     public static void main(String[] args) {
         APICaller caller = APIInit.initCaller(null);
-        System.out.println(caller.callAPI(false, "Without", "OAuth"));
 
+        System.out.println(caller.callAPI(false, "Without", "OAuth"));
         FireAPI apiCallerFunction = (data) -> caller.callAPI(false, data);
 
         TokenFetcher tokenFetcher = OAuthInit.getOAuth("iam", "carrot", apiCallerFunction);
