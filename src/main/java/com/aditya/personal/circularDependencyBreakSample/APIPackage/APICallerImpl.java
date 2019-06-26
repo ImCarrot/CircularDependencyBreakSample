@@ -25,7 +25,7 @@ class APICallerImpl implements APICaller, FireAPI {
 
         String token = provider.fetchToken();
 
-        return String.format("%s!!!%s", token, String.join("~", params));
+        return String.format("%s|%s", token, String.join("~", params));
     }
 
     @Override

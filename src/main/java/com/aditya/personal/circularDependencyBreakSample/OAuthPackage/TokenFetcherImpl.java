@@ -26,6 +26,6 @@ class TokenFetcherImpl implements TokenFetcher {
         if (apiFirer == null)
             throw new IllegalArgumentException("Can't call API");
 
-        return apiFirer.fire(String.format("|%s_%s|", CI, CS));
+        return apiFirer.fire(String.format("%s.%s", CI, CS));
     }
 }
