@@ -4,15 +4,11 @@ class TokenFetcherImpl implements TokenFetcher {
 
     private final FireAPI apiFirer;
 
-    private String CI;
-    private String CS;
+    private final String CI;
+    private final String CS;
 
-    TokenFetcherImpl(FireAPI apiFirer) {
+    TokenFetcherImpl(String CI, String CS, FireAPI apiFirer) {
         this.apiFirer = apiFirer;
-    }
-
-    @Override
-    public void init(String CI, String CS) {
         this.CI = CI;
         this.CS = CS;
     }
@@ -26,6 +22,6 @@ class TokenFetcherImpl implements TokenFetcher {
         if (apiFirer == null)
             throw new IllegalArgumentException("Can't call API");
 
-        return apiFirer.fire(String.format("%s.%s", CI, CS));
+        return apiFirer.fire(String.format("|%s.%s|", CI, CS));
     }
 }
