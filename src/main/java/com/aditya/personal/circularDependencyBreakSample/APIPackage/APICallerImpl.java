@@ -19,7 +19,7 @@ class APICallerImpl implements APICaller {
 
         String token = provider.getToken();
 
-        return null;
+        return String.format("%s!!!%s", token, String.join("~", params));
     }
 
 }
